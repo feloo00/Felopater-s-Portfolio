@@ -89,7 +89,7 @@
     <section id="home" class="min-h-screen flex items-center justify-center pt-20 pb-16 px-4">
         <div class="container mx-auto text-center">
             <div class="glass-card p-8 lg:p-12 max-w-4xl mx-auto">
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 whitespace-nowrap">Felopater Adel Abd El
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 break-words">Felopater Adel Abd El
                     Malak</h1>
                 <h2 class="text-xl md:text-2xl text-slate-600 mb-6">Flutter Developer & Computer Science Student</h2>
                 <p class="text-lg mb-8">Creating beautiful, high-performance cross-platform mobile applications</p>
@@ -246,7 +246,7 @@
             <h3 class="text-2xl font-semibold mb-8 text-center">Technologies I Work With</h3>
 
             <!-- هنا بنحدد أقصى عرض -->
-            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
 
                 <!-- Flutter -->
                 <div class="bg-white p-6 rounded-2xl shadow-md">
@@ -284,7 +284,7 @@
     <section id="projects" class="py-20 px-4">
         <div class="container mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <!-- Project 1 -->
                 <div class="glass-card p-6 project-card">
                     <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/19faac24-b4db-4369-9d18-6c85685f6cfb.png"
@@ -497,6 +497,27 @@
             }
         });
     </script>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.querySelector('nav button');
+        const menuLinks = document.createElement('div');
+        menuLinks.className = "mobile-menu hidden flex-col space-y-4 mt-4 md:hidden";
+        menuLinks.innerHTML = `
+            <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
+            <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+            <a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+            <a href="#experience" class="hover:text-blue-600 transition-colors">Experience</a>
+            <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+        `;
+        document.querySelector('nav .container').appendChild(menuLinks);
+
+        menuBtn.addEventListener('click', () => {
+            menuLinks.classList.toggle('hidden');
+        });
+    </script>
+    
 </body>
 
 </html>
